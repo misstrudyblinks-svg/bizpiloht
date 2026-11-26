@@ -11,7 +11,7 @@ let currentUser = null;
 let activeConversationId = null;
 let stopConversationListener = null;
 let chatBusy = false;
-const API_BASE_URL = "http://localhost:3000"; // Change to your deployed HTTPS backend URL before publishing the frontend.
+const API_BASE_URL = "https://bizpiloht-ai-backend.onrender.com"; // Change to your deployed HTTPS backend URL before publishing the frontend.
 const descriptions = {
   overview: ["Overview", "Your business workspace at a glance."],
   assistant: ["AI Assistant", "A helpful AI partner for everyday business questions, planning and problem-solving."],
