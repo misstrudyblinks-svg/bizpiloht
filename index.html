@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101828">
+  <meta name="description" content="BizPilot AI — your intelligent partner for smarter business.">
+  <title>BizPilot AI | Business Assistant</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="BizPilot AI home">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span>BizPilot<span class="brand-ai"> AI</span><small>BUSINESS ASSISTANT</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span> Overview</button>
+        <button class="nav-item" data-view="assistant"><span class="nav-icon">✦</span> AI Assistant </button>
+        <button class="nav-item" data-view="content"><span class="nav-icon">✎</span> Content Studio <span class="nav-pill">Soon</span></button>
+        <button class="nav-item" data-view="analytics"><span class="nav-icon">▥</span> Business Insights <span class="nav-pill">Soon</span></button>
+        <button class="nav-item" data-view="documents"><span class="nav-icon">▤</span> Documents <span class="nav-pill">Soon</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">?</div><strong>Need a hand?</strong><p>Explore the workspace and get ready to work smarter.</p><a href="mailto:support@example.com">Contact support ↗</a></div>
+        <button class="profile-button" id="profileButton">
+          <span class="avatar" id="avatar">G</span>
+          <span class="profile-copy"><strong id="profileName">Guest user</strong><small id="profileEmail">Not signed in</small></span>
+          <span class="profile-menu">⋯</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbTitle">Overview</strong></div>
+        <div class="top-actions">
+          <span class="status-dot"></span><span class="status-text">Workspace ready</span>
+          <button class="button button-outline button-small" id="authButton">Sign in</button>
+        </div>
+      </header>
+
+      <section class="page-content" id="overviewView">
+        <div class="welcome-row">
+          <div><div class="eyebrow">YOUR BUSINESS, IN ONE PLACE</div><h1>Good day<span id="welcomeName"></span> <span class="wave">✦</span></h1><p class="muted">A clearer view of your work starts here. What would you like to accomplish?</p></div>
+          <div class="date-chip" id="todayDate"></div>
+        </div>
+
+        <section class="hero-card">
+          <div class="hero-copy"><div class="hero-label"><span class="sparkle">✦</span> MEET YOUR AI WORK PARTNER</div><h2>Make room for<br><em>smarter work.</em></h2><p>From customer messages to business insights, bring your everyday work together in one intelligent workspace.</p><button class="button button-light" data-go="assistant">Explore AI Assistant <span>→</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="ai-core"><span>✦</span><small>AI</small></div><div class="float-card float-one">✎ <span>Ideas</span></div><div class="float-card float-two">▥ <span>Insights</span></div><div class="float-card float-three">✉ <span>Messages</span></div></div>
+        </section>
+
+        <div class="section-heading"><div><h2>Your workspace</h2><p class="muted">Tools designed to move your business forward.</p></div><span class="section-note">PHASE 1 PREVIEW</span></div>
+        <div class="tool-grid">
+          <button class="tool-card" data-go="assistant"><span class="tool-icon purple">✦</span><span class="tool-title">AI Assistant</span><span class="tool-desc">Think through ideas, ask questions and get help with daily work.</span><span class="tool-link">Explore tool <b>→</b></span></button>
+          <button class="tool-card" data-go="content"><span class="tool-icon orange">✎</span><span class="tool-title">Content Studio</span><span class="tool-desc">Prepare business emails, marketing copy and professional documents.</span><span class="tool-link">Explore tool <b>→</b></span></button>
+          <button class="tool-card" data-go="analytics"><span class="tool-icon blue">▥</span><span class="tool-title">Business Insights</span><span class="tool-desc">Turn business activity into clear reports and useful insights.</span><span class="tool-link">Explore tool <b>→</b></span></button>
+          <button class="tool-card" data-go="documents"><span class="tool-icon green">▤</span><span class="tool-title">Document Assistant</span><span class="tool-desc">Keep important business files and prepare for document analysis.</span><span class="tool-link">Explore tool <b>→</b></span></button>
+        </div>
+
+        <section class="bottom-grid">
+          <div class="panel getting-started"><div class="panel-title"><div><h3>Getting started</h3><p class="muted">Set up your workspace in a few steps.</p></div><span class="progress-label" id="progressLabel">0 of 3</span></div><div class="progress-track"><span id="progressBar"></span></div>
+            <label class="check-row"><input type="checkbox" id="checkProfile"><span class="fake-check"></span><span><strong>Set up your account</strong><small>Create your personal workspace profile.</small></span></label>
+            <label class="check-row"><input type="checkbox" id="checkExplore"><span class="fake-check"></span><span><strong>Explore the AI tools</strong><small>See what your assistant will help you do.</small></span></label>
+            <label class="check-row"><input type="checkbox" id="checkPlan"><span class="fake-check"></span><span><strong>Define your business goals</strong><small>Decide what you want to improve first.</small></span></label>
+          </div>
+          <div class="panel account-panel"><div class="panel-title"><div><h3>Account status</h3><p class="muted">Your workspace access.</p></div><span class="account-indicator">●</span></div><div class="account-status" id="accountStatus">Guest preview</div><p class="muted small-text" id="accountDescription">Sign in to save your profile and use your personal workspace across devices.</p><button class="button button-dark button-full" id="accountAction">Create free account</button><div class="secure-note">⌑ Your account data is protected by Firebase security rules.</div></div>
+        </section>
+        <footer>© <span id="year"></span> BizPilot AI. Built for better business.</footer>
+      </section>
+
+      <section class="page-content secondary-view hidden" id="secondaryView">
+        <div class="eyebrow">BIZPILOT AI WORKSPACE</div><h1 id="secondaryTitle">AI Assistant</h1><p class="muted" id="secondaryDescription"></p>
+        <div id="assistantWorkspace" class="assistant-workspace hidden">
+          <aside class="chat-history-panel"><div class="history-heading"><strong>Conversations</strong><button id="newChatButton" class="button button-dark button-small" type="button">＋ New</button></div><div id="conversationList" class="conversation-list"><p class="muted">Your saved conversations will appear here.</p></div></aside>
+          <section class="chat-panel" aria-label="AI business chat">
+            <div class="chat-toolbar"><div><strong>BizPilot Assistant</strong><p class="muted">Your intelligent business partner</p></div><label class="provider-picker">AI provider<select id="providerSelect"><option value="gemini">Google Gemini</option><option value="openai">OpenAI</option></select></label></div>
+            <div id="chatMessages" class="chat-messages" aria-live="polite"><div class="assistant-welcome"><div class="coming-icon">✦</div><h2>What can we work on?</h2><p class="muted">Ask for business ideas, customer replies, marketing plans, operations advice and more.</p><div class="prompt-chips"><button type="button" data-prompt="Create a simple marketing plan for my small business.">Create a marketing plan</button><button type="button" data-prompt="Help me write a professional reply to an unhappy customer.">Reply to a customer</button><button type="button" data-prompt="Give me five practical ways to increase sales this month.">Grow my sales</button></div></div></div>
+            <div id="chatError" class="chat-error" role="status"></div>
+            <form id="chatForm" class="chat-composer"><textarea id="chatInput" rows="1" maxlength="6000" placeholder="Ask BizPilot anything about your business…" required></textarea><button id="sendChatButton" class="button button-dark" type="submit">Send ↑</button><small>Your messages are saved to your private Firebase account. AI replies may need checking before business use.</small></form>
+          </section>
+        </div>
+        <div id="assistantSetupHint" class="setup-hint"><strong>Connect your AI service</strong><p class="muted">The chat interface is ready. To receive answers, configure the secure backend using the instructions in <code>backend/README.md</code>. Never paste an AI API key into this page.</p></div>
+        <div id="otherComingPanel" class="coming-panel"><div class="coming-icon">✦</div><span class="section-note">COMING IN A FUTURE PHASE</span><h2>This tool is on our roadmap.</h2><p class="muted">The AI Assistant is now available in Phase 2. Content Studio, Business Insights and Documents will be connected in upcoming phases.</p><button class="button button-dark" data-go="overview">Back to overview</button></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="auth-modal">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-brand"><img src="assets/logo.svg" alt="" width="42" height="42"><strong>BizPilot AI</strong></div>
+      <div class="eyebrow">YOUR BUSINESS WORKSPACE</div><h2 id="modalTitle">Welcome back</h2><p class="muted" id="modalSubtitle">Sign in to continue to your workspace.</p>
+      <form id="authForm">
+        <label class="field-label">Full name <input id="fullName" type="text" autocomplete="name" placeholder="Your name" /></label>
+        <label class="field-label">Email address <input id="email" type="email" required autocomplete="email" placeholder="you@company.com"></label>
+        <label class="field-label">Password <input id="password" type="password" required minlength="6" autocomplete="current-password" placeholder="At least 6 characters"></label>
+        <button class="button button-dark button-full" id="submitAuth" type="submit">Sign in</button>
+      </form>
+      <button class="text-button" id="toggleAuth">New to BizPilot? Create an account</button>
+      <button class="text-button muted-link" id="resetPassword">Forgot password?</button>
+      <p class="form-message" id="formMessage" role="status"></p>
+      <p class="terms-note">By continuing, you agree to use BizPilot AI responsibly.</p>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
